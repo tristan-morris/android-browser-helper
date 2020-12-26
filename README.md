@@ -46,3 +46,20 @@ Apache header:
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+## Local Development
+
+`./gradlew assembleRelease && ./gradlew publishProductionPublicationToMavenLocal`
+
+Updated dependent app's `build.gradle` to include:
+
+```gradle
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
+    }
+}
+```
